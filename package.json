@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "apexcharts": "^4.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cookies-next": "^6.1.1",
     "dayjs": "^1.11.13",
+    "firebase": "^12.7.0",
+    "firebase-admin": "^13.6.0",
     "flatpickr": "^4.6.13",
     "jsvectormap": "^1.6.0",
     "next": "16.0.10",
@@ -21,7 +25,9 @@
     "react": "^19.2.0",
     "react-apexcharts": "^1.7.0",
     "react-dom": "^19.2.0",
-    "tailwind-merge": "^2.6.0"
+    "react-toastify": "^11.0.5",
+    "tailwind-merge": "^2.6.0",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@types/node": "^22",

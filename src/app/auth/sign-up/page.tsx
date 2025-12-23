@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Sign in",
 };
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <>
       <div className="rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">

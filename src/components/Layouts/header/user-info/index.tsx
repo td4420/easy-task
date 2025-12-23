@@ -11,9 +11,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { LogOutIcon, SettingsIcon, UserIcon } from "./icons";
+import { signOut } from "firebase/auth";
+import auth from "@/config/firebase";
+import { toast } from "react-toastify";
+import { useAuth } from "@/hooks/useAuth";
 
 export function UserInfo() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { handleLogout } = useAuth();
 
   const USER = {
     name: "John Smith",
@@ -42,7 +48,7 @@ export function UserInfo() {
               aria-hidden
               className={cn(
                 "rotate-180 transition-transform",
-                isOpen && "rotate-0",
+                isOpen && "rotate-0"
               )}
               strokeWidth={1.5}
             />
@@ -106,7 +112,7 @@ export function UserInfo() {
         <div className="p-2 text-base text-[#4B5563] dark:text-dark-6">
           <button
             className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-[9px] hover:bg-gray-2 hover:text-dark dark:hover:bg-dark-3 dark:hover:text-white"
-            onClick={() => setIsOpen(false)}
+            onClick={handleLogout}
           >
             <LogOutIcon />
 

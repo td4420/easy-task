@@ -4,8 +4,10 @@ import Link from "next/link";
 import React, { useState } from "react";
 import InputGroup from "../FormElements/InputGroup";
 import { Checkbox } from "../FormElements/checkbox";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function SigninWithPassword() {
+  const { signInWithPassword } = useAuth();
   const [data, setData] = useState({
     email: process.env.NEXT_PUBLIC_DEMO_USER_MAIL || "",
     password: process.env.NEXT_PUBLIC_DEMO_USER_PASS || "",
@@ -21,12 +23,14 @@ export default function SigninWithPassword() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // You can remove this code block
     setLoading(true);
 
+    console.log(data);
+    await signInWithPassword(data.email, data.password);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
